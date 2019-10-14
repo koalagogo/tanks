@@ -1,4 +1,5 @@
 var express = require('express');
+var process = require('process');
 var app = express();
 var counter = 0;
 var BALL_SPEED = 10;
@@ -6,10 +7,12 @@ var WIDTH = 1100;
 var HEIGHT = 580;
 var TANK_INIT_HP = 100;
 
+process.on('SIGINT', () => process.exit(0));
+
 //Static resources server
 app.use(express.static(__dirname + '/www'));
 
-var server = app.listen(process.env.PORT || 8082, function () {
+var server = app.listen(process.env.PORT || 8080, function () {
 	var port = server.address().port;
 	console.log('Server running at port %s', port);
 });

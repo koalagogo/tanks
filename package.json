@@ -4,8 +4,9 @@
   "description": "Tanks tutorial for web sockets",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run gen_addr; node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen_addr": "export DOMAIN=${DOMAIN:=127.0.0.1} PORT=${PORT:=8080}; sed \"s@{{server_address}}@$DOMAIN:$PORT@\" www/js/client.js.tpl > www/js/client.js"
   },
   "repository": {
     "type": "git",
