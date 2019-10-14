@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/rubentd/tanks#readme",
   "dependencies": {
-    "express": "^4.13.3",
-    "socket.io": "^1.3.7"
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
   }
 }
